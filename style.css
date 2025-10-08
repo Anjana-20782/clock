@@ -2,11 +2,12 @@ body{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: arial;
 }
 
 body{
 
-    background: linear-gradient(to right,rgb(27, 142, 174),rgb(48, 124, 174),rgb(18, 125, 135));
+    background: linear-gradient(to right,rgb(71, 142, 161),rgb(34, 104, 150),rgb(1, 41, 49));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,6 +33,7 @@ body{
     height: 100%;
     text-align: center;
     transform: rotate(var(--rotation));
+    font-size: 1.5rem;
 }
 
 .clock .number1{--rotation: 30deg;}
@@ -56,11 +58,12 @@ body{
     position: absolute;
     height: 42%;
     bottom: 50%;
-    left: 49%;
+    left: 50%;
     border: 1px solid white;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     transform-origin: bottom;
+    z-index: 10;
     transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg)) ;
 }
 
@@ -83,4 +86,19 @@ body{
     width: 10px;
     height: 35%;
     background-color: black;
+}
+
+.clock::after{
+
+    content: '';
+    width: 15px;
+    height: 15px;
+    background-color: black;
+    position: absolute;
+    left: 50%;
+   top: 50%;
+   z-index: 11;
+   transform: translate(-50%,-50%);
+   border-radius: 50%;
+
 }
